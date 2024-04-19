@@ -269,6 +269,72 @@ public static long conversionMbIntoByte(long mb){
         System.out.println(bytes + "- Байт");
 
     }
+    //Task_32
+ public static void printArrayReverse(int[] array){
+     for (int i = array.length - 1; i >= 0; i--) {
+         System.out.print(array[i] + " ");
+     }
+ }
+    //Task_33
+    public static void conversionByteIntoGbAndMbAndKb(long bytes) {
+        double kb = bytes/1024d;
+        System.out.printf( "%.2f",kb  );
+        System.out.println( "- Килобайт");
+        double mb = kb / 1024d;
+        System.out.printf("%.2f",mb);
+        System.out.println( "- Мегабайт");
+        double gb = mb / 1024d;
+        System.out.printf("%.2f", gb);
+        System.out.println( "- Гигабайт");
+    }
+    //Task_34
+    public static boolean lastCharFirstIsEqualFirstCharSecond(String first, String second) {
+        boolean isEqual;
 
-
+        if(first.toLowerCase().charAt(first.length() - 1) == second.toLowerCase().charAt(0)) {
+            isEqual = true;
+        }
+        else isEqual = false;
+        return isEqual;
+    }
+    //Task_35
+    public static void printSecondsInDay(){
+        int hours = 24;
+        int minutes = hours * 60;
+        int seconds = minutes * 60;
+        System.out.println(seconds);
+    }
+    //Task_36
+    public static void printNegativeNumbers(int[] x){
+        for (int i = 0; i < x.length; i++) {
+            if(x[i] >= -100 && x[i] <= 0) {
+                System.out.print(x[i] + " ");
+            }
+        }
+    }
+    //Task_37
+    public static void printSecondsInYear(){
+        int days = 365;
+        int hours = days * 24;
+        int minutes = hours * 60;
+        int seconds = minutes * 60;
+        System.out.println(seconds);
+    }
+    //Task_38
+    public static void findDividers(int x){
+        for (int i = 1; i <= x; i++) {
+            if( x % i == 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+    //Task_39
+    public static void findIterations(int x){
+        int count = 0;
+        while( x >= 10) {
+            x = x/ 2;
+            count++;
+        }
+        System.out.println(count + " - число итераций");
+    }
     }
