@@ -18,9 +18,9 @@ public class Task1 {
           int[] tempArray = new int[m]; //создаем временный массив по размеру шага
           for (int i = 0; i < m; i++) {  //разбиваем на интервалы по размеру шага
               tempArray[i] = circleArray[startElement];
-              if (i != tempArray.length -1) { // если итерация не равна конечному элементу кругового массива - переходим к следующему элементу
+              if (i != tempArray.length -1) { // если итерация не равна конечному элементу временного массива - переходим к следующему элементу кругового массива
                   startElement++;
-                  if( startElement == circleArray.length) { // переходим на новый круг, дабы вернуться к началу кругового массива
+                  if( startElement == circleArray.length) { // переходим на новый круг
                       startElement = 0;
                   }
               }
