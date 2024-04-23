@@ -1,14 +1,15 @@
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Task1 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-             int  n = Integer.parseInt(reader.readLine());//чтение с консоли размера массива
-             int  m = Integer.parseInt(reader.readLine()); // чтение с консоли шага
-             int  startElement = 0;
-             boolean isEnd = false;
+    public static void main(String[] args)  {
+       int  n = Integer.parseInt(args[0]); //читаем значения длины массива и шага
+       int m = Integer.parseInt(args[1]);
+       int  startElement = 0;
+       boolean isEnd = false;
+
         StringBuilder result = new StringBuilder(); // в эту переменную запишем результат
             int[] circleArray = new int[n]; // создание массива размером n
         for (int i = 0; i < circleArray.length; i++) { // заполнение массива числами от 1 до n
@@ -18,9 +19,9 @@ public class Task1 {
           int[] tempArray = new int[m]; //создаем временный массив по размеру шага
           for (int i = 0; i < m; i++) {  //разбиваем на интервалы по размеру шага
               tempArray[i] = circleArray[startElement];
-              if (i != tempArray.length -1) { // если итерация не равна конечному элементу временного массива - переходим к следующему элементу кругового массива
+              if (i != tempArray.length -1) { // если итерация не равна конечному элементу кругового массива - переходим к следующему элементу
                   startElement++;
-                  if( startElement == circleArray.length) { // переходим на новый круг
+                  if( startElement == circleArray.length) { // переходим на новый круг, дабы вернуться к началу кругового массива
                       startElement = 0;
                   }
               }
